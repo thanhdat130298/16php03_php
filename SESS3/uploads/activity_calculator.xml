@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Calculator">
+
+    <android.support.v7.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="32"
+        tools:layout_editor_absoluteX="56dp"
+        tools:layout_editor_absoluteY="35dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:text="CALCULATOR" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:weightSum="4">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Num 1: " />
+
+            <EditText
+                android:id="@+id/num1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:inputType="number"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:weightSum="4">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Num 2: " />
+
+
+            <EditText
+                android:id="@+id/num2"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+
+                android:inputType="number"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:weightSum="4">
+
+            <Button
+                android:id="@+id/cong"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:text="+"
+                android:textSize="20dp"
+                android:onClick="cong"/>
+
+            <Button
+                android:id="@+id/tru"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:text="-"
+                android:textSize="20dp"/>
+
+            <Button
+                android:id="@+id/nhan"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:text="*"
+                android:textSize="20dp"/>
+
+            <Button
+                android:id="@+id/chia"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:text="/"
+                android:textSize="20dp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:weightSum="4"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="Result: "/>
+            <TextView
+                android:id="@+id/result"
+                android:text="0"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content" />
+        </LinearLayout>
+    </android.support.v7.widget.LinearLayoutCompat>
+</LinearLayout>
