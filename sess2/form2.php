@@ -104,8 +104,7 @@
 				$query->execute();
 				$result = $query->fetchAll(PDO::FETCH_ASSOC);
 				foreach ($resule as $row ) {
-					echo '<option value="'.$ro">--Chọn Tỉnh...</option>
-'
+					echo '<option value = "">--Chọn Tỉnh...</option>';
 
 					# code...
 				}

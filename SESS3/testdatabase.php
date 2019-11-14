@@ -11,13 +11,11 @@
 </head>
 <body>
 	<?php
-
-$servername = "localhost";
+	$servername = "localhost";
 	$username = "root";
 	$password = "";
 	$db = "product";
 	$port = "8080";
-
 	// Create connection
 	$connect = new mysqli($servername, $username, $password, $db);
 	// Check connection
@@ -26,8 +24,7 @@ $servername = "localhost";
 	}
 		$name = $decription = $price = $product = $dateUp = $dateOut = $file = '';
 		$errName = $errPrice = $errDec = $errFile = $errProduct = $errDateUp = $errDate = $errDateOut = '';
-			$arrProduct = array('stone' => 'Cục đá', 'paper' => 'Miếng giấy', 'wood' => 'Khúc gỗ');
-
+		$arrProduct = array('stone' => 'Cục đá', 'paper' => 'Miếng giấy', 'wood' => 'Khúc gỗ');
 		$check = true;
 		if(isset($_POST['submit'])){
 			$name = $_POST['name'];
@@ -37,7 +34,6 @@ $servername = "localhost";
 			$dateUp = $_POST['dateUp'];
 			$dateOut = $_POST['dateOut'];
 			$fileName = '';
-
 			if($name == ''){
 				$errName = 'Nhập tên sản phẩm!';
 				$check = false;
@@ -69,7 +65,6 @@ $servername = "localhost";
 			if($dateOut<$dateUp) {
 				$errDate = 'Nhap sai ngay!';
 				$check = false;
-
 			}
 			$upload = $_FILES['img'];
 			if(isset($upload)){
@@ -79,6 +74,7 @@ $servername = "localhost";
 				}
 				else if ($upload['error']==0){
 					$fileName = $upload['name'];
+					$file = $_FILES['img']['name'];
 					move_uploaded_file($upload['tmp_name'], 'uploads/'.$fileName);
 				}
 			}
@@ -94,19 +90,13 @@ $servername = "localhost";
 				echo "Sản phẩm: $arrProduct[$product]<br>";	
 				echo "</div>";
 				$sql = "INSERT INTO products (NAME, DECRIPTION, COST, IMG, DAYUP, DATEOUT, CATEGORY) VALUES ('$name', '$decription', '$price', '$fileName', '$dateUp', '$dateOut', '$product')";
-				if ($connect->query($sql) === TRUE) {
+				
 			        echo "<span> Thêm dữ liệu thành công</span>";
-			    } else {
-			        echo "Error: " . $sql . "<br>" . $connect->error;
-			    }
 
+				
 			}
 		}
-		
-
 	$connect->close();
-
-
 	?>
 	<form method="POST" enctype="multipart/form-data">
 		<label>Tên sản phẩm: </label><br>
@@ -128,12 +118,13 @@ $servername = "localhost";
 		<label>Ngày đăng:  </label><br>
 		<input type="date" class="input" name="dateUp" value="<?php echo $dateUp; ?>"><br>
 		<span><?php echo $errDateUp;?></span>	<br>
-
 		<label>Ngày hết hạn:  </label><br>
+
 		<input type="date" class="input" name="dateOut" value="<?php echo $dateOut; ?>"><br>
 		<span><?php echo $errDateOut;?></span>	<br>
 		<span><?php echo $errDate ?></span><br>
 		<label>Sản Phẩm: </label><br>
+
 		<select name="product">
 			<option value="">Danh mục sản phẩm---</option>
 			<option value="stone" <?php echo $product == 'stone'?'selected':'' ?>>Cục đá</option>

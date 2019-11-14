@@ -1,0 +1,12 @@
+B1: Mở cơ sở dữ liệu (SQL SERVER)
+B2: Click chuột phải vào Database-> chọn Restore Database...
+B3: Chọn Device -> chọn đường dẫn vào chứa thư mục .bak
+B4: Chọn Add -> tìm file.bak(thường import vào đường dẫn này mới hiện file lên được C:\Program Files\Microsoft SQL Server\MSSQL14.SQLEXPRESS\MSSQL\Backup)
+B5: Nhấn OK để cấu hình database.
+
+
+-> Sau khi import xong mở file FUNCTION.sql và chạy các câu lệnh trong đó. 
+
+LƯU Ý: CÂU LỆNH TRONG ĐÓ CÓ GÌ KHÔNG HIỂU THÌ TÌM Ở CÁC ĐƯỜNG LINK SAU(TA ĐỌC CŨNG KO HIỂU @@)
+https://docs.microsoft.com/en-us/sql/relational-databases/user-defined-functions/create-user-defined-functions-database-engine?view=sql-server-ver15
+-- GOOD LUCK -- 
