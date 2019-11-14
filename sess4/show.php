@@ -13,14 +13,13 @@
 		border: 1px solid black;}
 </style>
 <body>
+	<h1>LIST PRODUCT</h1>
 	<?php include "connect.php";?>
 	
 	<?php 
 		$errFind = '';
 		$sqlSelect = "SELECT * FROM news";
 		$result = mysqli_query($connect, $sqlSelect);
-		$sqlFind = "SELECT * FROM news WHERE TITLE = %TITLE%";
-		$finded = mysql_query($connect, $sqlFind);
 	?>
 
 	<label>Find: </label>
