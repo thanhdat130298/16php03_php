@@ -3,43 +3,11 @@
 <head>
 	<meta charset="utf-8">
 	<title>SQL</title>
+	<link rel="stylesheet" type="text/css" href="css\style.css">
 </head>
 <body>
-	<style type="text/css">
-		.upload {
-			background: black;
-			color: white;
-			width: 100%;
-			outline: none;
-			height: 50px;
-			font-size: 20px;
-			border: none;
-		}
-		.upload:hover {
-			background: white;
-			color: black;
-			border: 1px solid black;
-		}
-		h1 {
-
-			margin-left: 90px;
-		}
-		
-		label {
-			font-weight: bold;
-		}
-		form {
-			width: 30%;
-			margin: 0 auto;
-			border: 1px solid brown;
-			padding: 10px;
-		}
-		span {
-			text-align: center;
-			color: red;
-		}
-	</style>
-	<?php include 'connect.php';?>
+	
+	<?php include 'php\connect.php';?>
 	<?php
 		$decription = $title = $upload = '';
 		$errDec = $errTitle = $errUp = '';
@@ -73,7 +41,7 @@
 			        $decription = $title = '';		
 			        	echo '<script type="text/javascript">alert("Thêm dữ liệu thành công!");</script>';
 							// chuyen trang
-						header('Location: show.php');
+						header('Location: php\show.php');
 			    } 
 			    else {
 			        echo "Error: " . $sql . "<br>" . $connect->error;
@@ -82,22 +50,22 @@
 		}
 	?>
 		
-	<form method="POST" enctype="multipart/form-data">
+	<form method="POST" enctype="multipart/form-data" class="form1">
 	<h1>Upload product</h1>
 		<p>
-			<label>Title: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label>
-			<input type="text" name="title" value="<?php echo $title; ?>"><br>
+			<label class="space">Title: </label>
+			<input type="text" class="title" name="title" value="<?php echo $title; ?>"><br>
 			<span><?php echo $errTitle;?></span>
 		</p>
 		<p>
-			<label>Decription: </label>
+			<label class="dec">Decription: </label>
 			<textarea name="decription"><?php echo $decription; ?></textarea><br>
 			<span><?php echo $errDec;?></span>
 		</p>
 		
 		<p>
-			<label>Picture : </label>
-			<input type="file" name="image" class="img"><br>
+			<label class="pic">Picture : </label>
+			<input type="file" name="image" ><br>
 			<span><?php echo $errUp;?></span>
 		</p>
 		<p>

@@ -1,0 +1,107 @@
+
+#find {
+	font-size: 20px;
+}
+.findInput {
+	margin: 0;
+	height: 40px;
+	outline: none;
+	font-size: 20px;	
+	border: 1px solid black;
+	border-top-left-radius: 30px;
+	border-bottom-left-radius: 30px;
+	padding-left: 20px;
+}
+.findButton, .butBack {
+	margin: 0;
+	height: 45px;
+	width: 100px;
+	outline: none;
+	color: white;
+	background-color: black;
+	border: 1px solid black;
+	border-top-right-radius: 30px;
+	border-bottom-right-radius: 30px;
+}
+.findButton:hover, .butBack:focus{
+	color: #000;
+	transition: 0.2s;
+	background-color: #fff;
+}
+a {
+	text-decoration: none;
+}
+h1 {
+	width: 100%;
+	text-align: center;
+}
+.column {
+	text-align: center;
+}
+.img {
+	height: 100px;
+}
+table {
+	width: 100%;
+	border: 1px solid black;
+}
+tr, td, th {
+	
+	border: 1px solid black;
+}
+#find{
+	float: left;
+}
+#back {
+ 	float: right;
+ }
+ .butBack {
+
+	width: 300px;
+ }
+#back a {
+ 	color: white;
+	text-decoration: none;
+}
+.upload {
+	background: black;
+	color: white;
+	width: 100%;
+	outline: none;
+	height: 50px;
+	font-size: 20px;
+	border: none;
+}
+.upload:hover {
+	background: white;
+	color: black;
+	border: 1px solid black;
+}
+h1 {
+	width: 100%;
+	text-align: center;
+}
+
+label {
+	font-weight: bold;
+}
+.form1 {
+	margin-top: 100px;
+	width: 30%;
+	margin: 0 auto;
+	border: 1px solid brown;
+	padding: 10px;
+}
+span {
+	text-align: center;
+	color: red;
+}
+.space {
+	margin-right:  40px;
+}
+textarea, .title {
+	width: 300px;
+}
+.pic{
+	margin-right:  20px;
+}
