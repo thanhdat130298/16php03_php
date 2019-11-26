@@ -12,6 +12,14 @@
 	border-bottom-left-radius: 30px;
 	padding-left: 20px;
 }
+th {
+	background-color: brown;
+	color: white;
+	height: 50px;
+}
+.column {
+	height: 100px;
+}
 .findButton, .butBack {
 	margin: 0;
 	height: 45px;

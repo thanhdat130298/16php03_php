@@ -17,9 +17,7 @@
 			margin: 0 auto;
 			width: 70%;
 		}
-		input {
-			width: 100px;
-		}
+		
 	 	tr, th, td {
 
 	 		text-align: center;
@@ -44,13 +42,18 @@
 <body>
 	<?php include 'connect.php';?>
 	<?php 
+	$country = '';
+	$match = $win = $draw = $lose = $goal = $conceded = $difference = $point ='';
+
 		if(isset($_POST['sort'])){
-			
-			
-		}
+				$sqlInsert = "INSERT INTO input(country, match, win, draw, lose, goal, conceded) VALUES ('$country', '$match', '$win', '$draw', '$lose', $goal, '$conceded')";
+				$result = mysqli_query($connect, $sqlInsert);
+				if(!$result){
+					echo "error result";
+				}
+			}
+			else echo "error sort";
 	?>
-
-
 	<h1>Bảng G</h1>
 	<form method="POST" enctype="multipart/form-data" class="form1">
 		<table>
@@ -61,9 +64,9 @@
 				<th>Hòa</th>
 				<th>Thua</th>
 				<th>Bàn thắng</th>
-				<th>Bàn thua</th>
+				<th>Bàn thua</th><!-- 
 				<th>Hiệu số</th>
-				<th>Điểm</th>
+				<th>Điểm</th> -->
 			</tr>
 			<tr>
 				<td><input type="text" name="country"></td>
@@ -72,15 +75,15 @@
 				<td><input type="number" name="draw"></td>
 				<td><input type="number" name="lose"></td>
 				<td><input type="number" name="goal"></td>
-				<td><input type="number" name="conceded"></td>
-				<td><input type="number" name="difference"></td>
-				<td><input type="number" name="point"></td>
+				<td><input type="number" name="conceded"></td><!-- 
+				<td><input type="number" name="difference" ></td>
+				<td><input type="number" name="point" ></td> -->
 			</tr>
 		
-		</table>
-		<div class="div">
-			<input type="button" name="sort" value="OK" class="sort">
+		</table><div class="div">
+			<input type="submit" name="sort" value="OK" class="sort">
 		</div>
+		
 	</form>
 </body>
 </html> 

@@ -47,7 +47,7 @@
 				echo "<td class='column'>".$id."</td>";
 				echo "<td class='column'>".$row['TITLE']."</td>";
 				echo "<td class='column'>".$row['DECRIPTION']."</td>";
-				echo "<td class='column'><img class='img' src='..\uploads/".$row['Image']."'></td>";
+				echo "<td class='column'><img class='img' src='../uploads/".$row['Image']."'></td>";
 				echo "<td class='column'><a href='delete.php?ID=".$id."'>DELETE</a> <a href='edit.php?ID=".$id."'><br>EDIT</a></td>";
 			}
 		?>

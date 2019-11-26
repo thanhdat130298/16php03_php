@@ -12,9 +12,27 @@
 		$decription = $title = $upload = '';
 		$errDec = $errTitle = $errUp = '';
 		$check = true;
+
+		
+
 		if(isset($_POST['upload'])){
 			$decription = $_POST['decription'];
 			$title = $_POST['title'];
+		    $sqlTitle = "SELECT ID FROM news WHERE TITLE = '$title'";
+		    $draw = mysqli_query($connect, $sqlTitle);
+
+    //return total count
+   			$title_exist = mysqli_num_rows($draw); //total records
+
+    //if value is more than 0, username is not available
+		    if($title_exist) {
+		        $errTitle = 'Trùng tên' ;
+		        $check = false;
+		    }else{
+		         $check = true;
+		    }
+
+
 			if($decription == '') {
 				# code...
 				$errDec = 'Please type product`s decription!';
@@ -35,12 +53,12 @@
 				$file = $_FILES['image']['name'];
 				move_uploaded_file($up['tmp_name'], 'uploads/'.$upload);
 			}
+
+			
 			if($check){
 				$sqlInsert = "INSERT INTO news(TITLE, DECRIPTION, Image) VALUES ('$title', '$decription', '$file')";
 				if ($connect->query($sqlInsert) === TRUE) {
 			        $decription = $title = '';		
-			        	echo '<script type="text/javascript">alert("Thêm dữ liệu thành công!");</script>';
-							// chuyen trang
 						header('Location: php\show.php');
 			    } 
 			    else {

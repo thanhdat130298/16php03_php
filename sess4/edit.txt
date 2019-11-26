@@ -1,0 +1,5 @@
+lấy id
+lấy giá trị từ id đó
+đặt giá trị vào từng loại tương ứng
+ - hình
+ - 
