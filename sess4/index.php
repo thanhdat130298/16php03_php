@@ -21,10 +21,8 @@
 		    $sqlTitle = "SELECT ID FROM news WHERE TITLE = '$title'";
 		    $draw = mysqli_query($connect, $sqlTitle);
 
-    //return total count
    			$title_exist = mysqli_num_rows($draw); //total records
 
-    //if value is more than 0, username is not available
 		    if($title_exist) {
 		        $errTitle = 'Trùng tên' ;
 		        $check = false;
