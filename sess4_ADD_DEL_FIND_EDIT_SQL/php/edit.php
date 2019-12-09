@@ -3,26 +3,43 @@
 <head>
 	<meta charset="utf-8">
 	<title>SQL</title>
-	<link rel="stylesheet" type="text/css" href="css\style.css">
+	<style type="text/css">
+		img {
+			width: 100px;
+		}
+		span {
+			color: red;
+		}
+	</style>
 </head>
 <body>
 	
-	<?php include 'php\connect.php';?>
+	<?php include 'connect.php';?>
 	<?php
-		$decription = $title = $upload = '';
-		$errDec = $errTitle = $errUp = '';
+		$decription = $title = $upload = $dayUp = '';
+		$errDec = $errTitle = $errUp = $errDayUp = '';
 		$check = true;
 
 		
+		$idEdit = $_GET['ID'];
+		
+		$sqlEdit = "SELECT * FROM news WHERE ID = $idEdit";
+		$dataEdit = mysqli_query($connect, $sqlEdit);
+		$edit = $dataEdit->fetch_assoc();
 
-		if(isset($_POST['upload'])){
+		
+
+		if(isset($_POST['edit'])){
 			$decription = $_POST['decription'];
 			$title = $_POST['title'];
+			$dayUp = $_POST['day'];
 		    $sqlTitle = "SELECT ID FROM news WHERE TITLE = '$title'";
 		    $draw = mysqli_query($connect, $sqlTitle);
 
+    //return total count
    			$title_exist = mysqli_num_rows($draw); //total records
 
+    //if value is more than 0, username is not available
 		    if($title_exist) {
 		        $errTitle = 'Trùng tên' ;
 		        $check = false;
@@ -35,6 +52,10 @@
 				# code...
 				$errDec = 'Please type product`s decription!';
 				$check=false;
+			}
+			if ($dayUp =='') {
+				$errDayUp = 'Choose day upload product';
+				$check = false;
 			}
 			if($title == '') {
 				# code...
@@ -49,15 +70,16 @@
 			else if ($up['error']==0){
 				$upload = $up['name'];
 				$file = $_FILES['image']['name'];
-				move_uploaded_file($up['tmp_name'], 'uploads/'.$upload);
+				move_uploaded_file($up['tmp_name'], '../uploads/'.$upload);
 			}
 
 			
 			if($check){
-				$sqlInsert = "INSERT INTO news(TITLE, DECRIPTION, Image) VALUES ('$title', '$decription', '$file')";
-				if ($connect->query($sqlInsert) === TRUE) {
+				$sqlUpdate = "UPDATE news SET TITLE = '$title', DECRIPTION = '$decription', dayUp = '$dayUp', Image = '$file' WHERE ID ='$idEdit'";
+				if ($connect->query($sqlUpdate) === TRUE) {
 			        $decription = $title = '';		
-						header('Location: php\show.php');
+							// chuyen trang
+						header('Location: show.php');
 			    } 
 			    else {
 			        echo "Error: " . $sql . "<br>" . $connect->error;
@@ -67,25 +89,32 @@
 	?>
 		
 	<form method="POST" enctype="multipart/form-data" class="form1">
-	<h1>Upload product</h1>
+	<h1>Edit product</h1>
 		<p>
 			<label class="space">Title: </label>
-			<input type="text" class="title" name="title" value="<?php echo $title; ?>"><br>
+			<input type="text" class="title" name="title" value="<?php echo $edit['TITLE']; ?>"><br>
 			<span><?php echo $errTitle;?></span>
 		</p>
 		<p>
 			<label class="dec">Decription: </label>
-			<textarea name="decription"><?php echo $decription; ?></textarea><br>
+			<textarea name="decription"><?php echo $edit['DECRIPTION']; ?></textarea><br>
 			<span><?php echo $errDec;?></span>
+		</p>
+
+		<p>
+			<label class="dayUp">Day Upload:</label>
+			<input type="date" name="day" value="<?php echo $edit['dayUp']; ?>" >
+			<span><?php echo $errDayUp ?></span>
 		</p>
 		
 		<p>
 			<label class="pic">Picture : </label>
 			<input type="file" name="image" ><br>
+			<img src="../uploads/<?php echo $edit['Image'];?>">
 			<span><?php echo $errUp;?></span>
 		</p>
 		<p>
-			<input type="submit" value="Upload" class="upload" name="upload">
+			<input type="submit" value="Edit" class="edit" name="edit">
 		</p>
 	</form>
 </body>
