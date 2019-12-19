@@ -15,7 +15,8 @@
 			$name = $_POST['name'];
 			$sex = $_POST['sex'];
 			$idSC = $_POST['id_SC'];
-			$sqlinsert = "UPDATE student idSc='$idSC', name='$name' ,sex='$sex')";
+			$sqlinsert = "UPDATE student SET idSc='$idSC', name='$name' ,sex='$sex' WHERE id = $id";
+			//var_dump($sqlinsert);exit();
 			if (mysqli_query($connect,$sqlinsert)===TRUE) {
 				header('Location: index.php');
 				# code...
