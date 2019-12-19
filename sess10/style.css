@@ -1,0 +1,197 @@
+
+#find { font-size: 15px; float: right;
+} 
+.findInput { margin: 0; height: 40px; width: 200px;
+outline: none; font-size: 20px;	 border: 1px solid black;
+border-top-left-radius: 30px; border-bottom-left-radius: 30px; padding-left:
+10px; 
+font-family: sans-serif;} 
+
+#cc { width: 500px; }
+#decr { width: 300px; } 
+#id { width: 30px; } 
+#tt{ width: 100px; } th {
+background-color: brown; color: white; height: 50px; } 
+.column { height:
+100px; } 
+.findButton { clear: left; } 
+.findButton, .butBack { 
+	margin: 0;
+	margin-left: -2px; 
+	height: 45px; 
+	width: 100px; 
+	text-align: center;
+	line-height: 45px;
+
+	outline: none; 
+	color: white;
+	background-color: black; 
+	border: 1px solid black;
+
+}
+.findButton a{
+	color: white;
+}
+.findButton a:hover{
+	color: black;
+}
+h1 {
+	border-bottom: 1px solid black;
+}
+.findButton:hover, .butBack:focus{
+	color: #000;
+	transition: 0.2s;
+	background-color: #fff;
+}
+a {
+	text-decoration: none;
+}
+h1 {
+	width: 100%;
+	text-align: center;
+}
+.column {
+	text-align: center;
+}
+.img {
+	height: 150px;
+}
+table {
+	width: 50%;
+	margin: 0 auto;
+	border: 1px solid black;
+}
+tr, td, th {
+	
+	border: 1px solid black;
+}
+ .butBack {
+	
+	width: 300px;
+ }
+#back a {
+ 	color: white;
+	text-decoration: none;
+}
+.upload {
+	background: black;
+	color: white;
+	width: 100%;
+	outline: none;
+	height: 50px;
+	font-size: 20px;
+	border: none;
+}
+.upload:hover {
+	background: white;
+	color: black;
+	border: 1px solid black;
+}
+h1 {
+	width: 100%;
+	text-align: center;
+}
+
+label {
+	font-weight: bold;
+}
+form {
+	text-align: center;
+}
+.form1 {
+	margin-top: 100px;
+	width: 30%;
+	margin: 0 auto;
+	border: 1px solid brown;
+	padding: 10px;
+}
+span {
+	color: red;
+}
+.space, .space{
+	margin-right:  40px;
+}
+textarea, .title {
+	width: 300px;
+}
+.pic{
+	margin-right:  20px;
+}
+.ketqua {
+	color: green;
+	font-weight: bold;
+}
+#tin {
+	margin-top: 5px;
+	display: block;
+	cursor: pointer;
+	width: 100%;
+	height: 150px;
+}
+.imgTin{
+	float:  left;
+	width: 15%;
+	margin-right: 10px;
+}
+img.imgTin {
+	height: 150px;
+
+}
+.titleTin {
+	font-weight: bold;
+	text-decoration: underline;
+	margin-bottom: 5px;
+}
+.contentTin {
+	float: left;
+	width: 70%;
+}
+.container {
+	margin-top: 57px;
+	border: 2px solid black;
+	padding: 5px;
+}
+.table {
+	margin: 0 auto;
+	width: 500px;
+}
+#tt{
+	width: 300px;
+}
+.bao {
+	width: 150px;
+	margin: 0 auto;
+}
+input.title {
+	text-align: center;
+}
+input.add {
+	margin-top: 10px;
+
+	width: 150px;
+	text-align: center;
+	height: 45px; 
+	outline: none; 
+	color: white;
+	background-color: black; 
+	border: 1px solid black;
+}
+.add:hover{
+
+	color: white;
+	transition: 0.2s;
+	background-color: brown;
+}
+.list {
+	line-height: 50px;
+	width: 100px;
+	margin-left: 2px;
+
+	height: 50px;
+	color: black;
+	background-color: #0001;
+	font-weight:bold;
+	float: left;	
+	margin-top: 5px;
+	margin-bottom:  5px;
+}
