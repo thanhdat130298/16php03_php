@@ -51,12 +51,15 @@
 		}
 		
 	}
-	//Xuat ra then Add bi private
-	$user = new User();
-	$user->echo();
-	//Xuat ra then test bi protected
 	$customer = new Customer();
+	
+	//Xuat ra then Add bi private
+	$customer->echo();
+	//Xuat ra then test bi protected
 	$customer->test();
+	echo "<br>";
+	//xuat ra then Register 
+	$customer->Register();
 	//xuat ra bien username
 	echo "<br>".$customer->username;
 ?>
