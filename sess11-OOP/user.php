@@ -1,6 +1,6 @@
 <?php 
 	class User {
-		public $username="This is username";
+		public $username = "This is username";
 		public $email;
 		public $password;
 		public $phone;
@@ -9,24 +9,30 @@
 		private function Add() {
 			echo "This is Add Method";
 		}
+
 		protected function Edit() {
 			echo "This is Edit method";
 
 		}
+
 		public function Register() {
 			echo "This is Register method";
 		}
+
 		public function Login() {
 			
 		}
+
 		public function View() {
 			
 		}
+
 		private function List() {
 			
 		}
+
 		//goi lai ham Add
-		public function echo() {
+		public function Add2() {
 			$this->Add();
 			echo "<br>";
 		}
@@ -54,7 +60,7 @@
 	$customer = new Customer();
 	
 	//Xuat ra then Add bi private
-	$customer->echo();
+	$customer->Add2();
 	//Xuat ra then test bi protected
 	$customer->test();
 	echo "<br>";
