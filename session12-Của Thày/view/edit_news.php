@@ -10,7 +10,9 @@
 	<p>
 		Description <input type="text" name="description" value="<?php echo $edit['description']; ?>">
 	</p>
-	<p><?php echo $errD; ?></p>
+	<p>
+		<?php echo $errD; ?>
+	</p>
 	<p>
 	 <input type="submit" name="edit_news">
 	</p>
