@@ -3,7 +3,8 @@
 	class Controller {
 
 		function handleRequest(){
-			$action = isset($_GET['action'])?$_GET['action']:'home';
+
+			$action = isset($_GET['action'])?$_GET['action']:'news';
 			$model = new Model;
 			switch ($action) {
 				case 'home':

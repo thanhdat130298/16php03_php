@@ -1,0 +1,19 @@
+ul {
+	height: 50px;
+}
+ul li {
+	list-style-type: none;
+	float: left;
+	width: 200px;
+	border: 1px solid black;
+	padding: 5px;
+}
+ul li a {
+	text-decoration: none;
+}
+td, tr, th, table {
+	border: 1px solid red;
+}
+.but {
+	border: 1px solid blue;
+}
