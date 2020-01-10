@@ -1,15 +1,18 @@
 <?php
 
 ?>
-<form method="POST" action="index.php?action=add_product">
+<form method="POST" action="index.php?action=add_product" enctype="multipart/form-data">
 	<p>
 		Name: <input type="text" name="name">
+		<?php echo $errName;?>
 	</p>
 	<p>
-		Decription: <input type="text" name="decription"> 
+		Decription: <input type="text" name="decription">
+		<?php echo $errDec;?> 
 	</p>
 	<p>
 		Image: <input type="file" name="image">
+		<?php echo $errImg;?>
 	</p>
 	<p>Category:
 		<?php

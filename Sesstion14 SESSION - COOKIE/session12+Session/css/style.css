@@ -4,7 +4,7 @@ ul {
 ul li {
 	list-style-type: none;
 	float: left;
-	width: 200px;
+	width: 50px;
 	border: 1px solid black;
 	padding: 5px;
 }

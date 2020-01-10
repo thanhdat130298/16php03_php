@@ -4,4 +4,5 @@
 	</p>
 	<p>
 		<input type="submit" name="submit">
+		<?php echo $errCate;?>
 	</p>
