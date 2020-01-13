@@ -14,7 +14,8 @@
 		<li><a href="index.php?action=news">News</a></li>
 		<li><a href="index.php?action=contact">Contact</a></li>
 	</ul>
-	<?php 
+	<?php
+	echo "ok"; 
 		include 'controller/controller.php';
 		$controller = new Controller;
 		$controller->handleRequest();
