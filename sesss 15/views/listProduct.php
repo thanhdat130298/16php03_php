@@ -9,6 +9,9 @@
     margin: 0 auto;
     border: 2px solid #28cbd4;
   }
+  img {
+    width: 100px;
+  }
 </style>
 </head>
 <body>
@@ -31,7 +34,9 @@
       echo "<td>".$row['id']."</td>";
       echo "<td>".$row['title']."</td>";
       echo "<td>".$row['description']."</td>";
-      echo "<td>".$row['image']."</td>";
+
+          echo "<td><img src='./files/".$row['image']."'></td>";
+      // echo "<td>".$row['image']."</td>";
       echo "<td><a href='index.php?action=delete&id=".$id."''>Delete</a> | <a href='index.php?action=edit&id=".$id."''>Edit</a></td>";
 
       echo "</tr>";
